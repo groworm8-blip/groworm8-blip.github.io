@@ -4,174 +4,199 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Groworm Solutions</title>
-
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial, Helvetica, sans-serif;
-}
-
+*{margin:0;padding:0;box-sizing:border-box}
 body{
-background:#0f172a;
-color:white;
+font-family:Arial,Helvetica,sans-serif;
+background:#08111f;
+color:#fff;
+overflow-x:hidden;
 }
-
-header{
-padding:80px 20px;
-text-align:center;
-background:linear-gradient(135deg,#0ea5e9,#f97316);
+.bg{
+position:fixed;inset:0;z-index:-2;
+background:radial-gradient(circle at 20% 20%,rgba(14,165,233,.25),transparent 30%),
+radial-gradient(circle at 80% 30%,rgba(249,115,22,.25),transparent 30%),
+radial-gradient(circle at 50% 80%,rgba(14,165,233,.15),transparent 35%),
+#08111f;
+animation:pulse 8s infinite alternate;
 }
-
-header h1{
-font-size:48px;
-margin-bottom:10px;
+@keyframes pulse{
+from{transform:scale(1)}
+to{transform:scale(1.08)}
 }
-
-header p{
-font-size:20px;
+.hero{
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:40px;
+gap:60px;
+flex-wrap:wrap;
 }
-
-.container{
-max-width:1200px;
-margin:auto;
-padding:40px 20px;
+.hero-text{max-width:650px}
+.logo{width:90px;margin-bottom:20px}
+h1{font-size:64px;line-height:1}
+.orange{color:#f97316}
+.blue{color:#38bdf8}
+.subtitle{
+margin:20px 0;
+font-size:22px;
+color:#cbd5e1;
 }
-
-.section-title{
-font-size:32px;
-margin-bottom:20px;
-color:#38bdf8;
+.hero-img{
+width:320px;
+border-radius:30px;
+box-shadow:0 0 60px rgba(14,165,233,.4);
 }
-
-.about{
-background:#1e293b;
-padding:30px;
-border-radius:20px;
-margin-bottom:40px;
-}
-
-.apps{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:20px;
-}
-
-.card{
-background:#1e293b;
-padding:25px;
-border-radius:20px;
-transition:0.3s;
-}
-
-.card:hover{
-transform:translateY(-5px);
-}
-
-.card h3{
-margin-bottom:10px;
-color:#f97316;
-}
-
-.card p{
-margin-bottom:15px;
-line-height:1.5;
-}
-
 .btn{
 display:inline-block;
-padding:12px 20px;
-background:#0ea5e9;
-color:white;
+padding:14px 24px;
+margin-top:20px;
+background:linear-gradient(135deg,#0ea5e9,#f97316);
+border-radius:14px;
 text-decoration:none;
-border-radius:10px;
+color:white;
 font-weight:bold;
 }
-
+.section{
+max-width:1400px;
+margin:auto;
+padding:60px 20px;
+}
+.section h2{
+font-size:42px;
+margin-bottom:30px;
+text-align:center;
+}
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:25px;
+}
+.card{
+background:rgba(255,255,255,.05);
+backdrop-filter:blur(12px);
+border:1px solid rgba(255,255,255,.08);
+border-radius:24px;
+overflow:hidden;
+transition:.35s;
+}
+.card:hover{
+transform:translateY(-10px) scale(1.02);
+box-shadow:0 0 30px rgba(14,165,233,.25);
+}
+.card img{
+width:100%;
+display:block;
+}
+.card-content{padding:20px}
+.card h3{margin-bottom:10px}
+.card p{color:#cbd5e1;line-height:1.5}
+.about{
+background:rgba(255,255,255,.04);
+padding:30px;
+border-radius:24px;
+line-height:1.8;
+font-size:18px;
+}
 footer{
 text-align:center;
-padding:30px;
-margin-top:40px;
-background:#111827;
+padding:40px;
+color:#94a3b8;
 }
-
-.contact{
-background:#1e293b;
-padding:30px;
-border-radius:20px;
-margin-top:40px;
+@media(max-width:768px){
+h1{font-size:42px}
+.hero-img{width:260px}
 }
 </style>
-
 </head>
 <body>
 
-<header>
-<h1>Groworm Solutions</h1>
-<p>Darlan André Ferreira • Desenvolvedor Mobile</p>
-</header>
+<div class="bg"></div>
 
-<div class="container">
+<section class="hero">
+<div class="hero-text">
+<img src="images/logo.png" class="logo">
+<h1>Darlan André <span class="orange">Ferreira</span></h1>
+<p class="subtitle">
+Desenvolvedor Mobile especializado em Flutter, Hive e Supabase.
+Criando aplicativos, sistemas e soluções digitais através da Groworm Solutions.
+</p>
+<a class="btn" href="#apps">Conheça meus projetos</a>
+</div>
 
+<img src="images/darlan.png" class="hero-img">
+</section>
+
+<section class="section">
 <div class="about">
-<h2 class="section-title">Sobre Mim</h2>
-
+<h2 class="blue">Sobre Mim</h2>
 <p>
-Sou desenvolvedor focado em aplicativos móveis, sistemas de gestão,
-produtividade e entretenimento.
-Atualmente desenvolvo projetos próprios utilizando Flutter e Firebase,
-buscando criar soluções úteis para pessoas e empresas.
-</p>
-
-</div>
-
-<h2 class="section-title">Meus Aplicativos</h2>
-
-<div class="apps">
-
-<div class="card">
-<h3>🎵 Grow Player</h3>
-<p>
-Player de música moderno com foco em experiência simples e rápida.
+Sou desenvolvedor focado em aplicativos móveis, sistemas de gestão, produtividade,
+esportes, inteligência artificial e entretenimento. Todos os projetos apresentados
+foram idealizados e desenvolvidos por mim utilizando principalmente Flutter.
 </p>
 </div>
+</section>
+
+<section id="apps" class="section">
+<h2><span class="blue">Aplicativos</span> Desenvolvidos</h2>
+
+<div class="grid">
 
 <div class="card">
-<h3>🌱 HOJEVAI</h3>
-<p>
-Aplicativo voltado para hábitos, motivação e evolução pessoal.
-</p>
+<img src="images/cardassistenteia.png">
+<div class="card-content">
+<h3>Assistente Darlan IA</h3>
+<p>Assistente inteligente para organização de tarefas, produtividade e apoio diário.</p>
+</div>
 </div>
 
 <div class="card">
-<h3>⚽ Futime Copa</h3>
-<p>
-Sistema para gerenciamento de campeonatos e competições esportivas.
-</p>
+<img src="images/cardappmetas.png">
+<div class="card-content">
+<h3>Metas</h3>
+<p>Sistema comercial para acompanhamento de clientes, indicadores e metas.</p>
+</div>
 </div>
 
 <div class="card">
-<h3>📈 Rota+</h3>
-<p>
-Sistema comercial para gestão de clientes, metas e acompanhamento de resultados.
-</p>
+<img src="images/cardapphojevai.png">
+<div class="card-content">
+<h3>HOJEVAI</h3>
+<p>Aplicativo voltado para hábitos, evolução pessoal e rotina saudável.</p>
+</div>
+</div>
+
+<div class="card">
+<img src="images/cardappfutime.png">
+<div class="card-content">
+<h3>Futime</h3>
+<p>Gerenciamento de competições, partidas, estatísticas e campeonatos.</p>
+</div>
+</div>
+
+<div class="card">
+<img src="images/cardappbarbearia.png">
+<div class="card-content">
+<h3>Barbearia App</h3>
+<p>Gestão de serviços, produtos, comandas e atendimento.</p>
+</div>
+</div>
+
+<div class="card">
+<img src="images/cardappgrowplayer.png">
+<div class="card-content">
+<h3>Grow Player</h3>
+<p>Player moderno com foco em experiência premium e streaming musical.</p>
+</div>
 </div>
 
 </div>
-
-<div class="contact">
-<h2 class="section-title">Contato</h2>
-
-<p>Email: darlanander@gmail.com</p>
-<p>Desenvolvido por Darlan André Ferreira</p>
-
-</div>
-
-</div>
+</section>
 
 <footer>
-© 2026 Groworm Solutions - Todos os direitos reservados
+© 2026 Groworm Solutions • Irati - Paraná - Brasil
 </footer>
 
 </body>
