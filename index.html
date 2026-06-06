@@ -29,7 +29,7 @@ align-items:center;
 justify-content:space-between;
 gap:60px;
 }
-.logo{width:180px;margin-bottom:20px}
+.logo{width:280px;max-width:90%;margin-bottom:20px;object-fit:contain}
 .hero h1{font-size:72px;line-height:1}
 .hero h1 span{color:#f97316}
 .hero p{font-size:24px;color:#cbd5e1;margin:25px 0;max-width:700px}
@@ -39,7 +39,7 @@ background:linear-gradient(90deg,#0ea5e9,#f97316);
 border-radius:14px;color:white;text-decoration:none;font-weight:bold;
 }
 .photo{
-width:420px;border-radius:30px;
+width:460px;max-width:100%;border-radius:30px;
 box-shadow:0 0 50px rgba(14,165,233,.4);
 }
 .section-title{
@@ -95,6 +95,33 @@ text-align:center;
 .hero h1{font-size:52px}
 .photo{width:90%;max-width:420px}
 }
+
+.lightbox{
+display:none;
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.92);
+z-index:9999;
+justify-content:center;
+align-items:center;
+padding:20px;
+}
+.lightbox.active{display:flex}
+.lightbox img{
+max-width:92%;
+max-height:92%;
+border-radius:20px;
+box-shadow:0 0 60px rgba(14,165,233,.5);
+}
+.close-lightbox{
+position:absolute;
+top:20px;
+right:30px;
+font-size:50px;
+cursor:pointer;
+color:white;
+}
+
 </style>
 </head>
 <body>
@@ -131,32 +158,32 @@ text-align:center;
 
 <div class="apps">
 
-<div class="card">
+<div class="card" onclick="openLightbox('images/cardassistenteia.png')" style="cursor:pointer;">
 <img src="images/cardassistenteia.png">
 <div class="card-content"><h3>Assistente Darlan IA</h3><p>Organização de tarefas, produtividade e assistência inteligente.</p></div>
 </div>
 
-<div class="card">
+<div class="card" onclick="openLightbox('images/cardappmetas.png')" style="cursor:pointer;">
 <img src="images/cardappmetas.png">
 <div class="card-content"><h3>Metas</h3><p>Sistema comercial para metas, indicadores e clientes.</p></div>
 </div>
 
-<div class="card">
+<div class="card" onclick="openLightbox('images/cardapphojevai.png')" style="cursor:pointer;">
 <img src="images/cardapphojevai.png">
 <div class="card-content"><h3>HOJEVAI</h3><p>Hábitos, evolução pessoal e rotina saudável.</p></div>
 </div>
 
-<div class="card">
+<div class="card" onclick="openLightbox('images/cardappfutime.png')" style="cursor:pointer;">
 <img src="images/cardappfutime.png">
 <div class="card-content"><h3>Futime</h3><p>Competições, partidas, estatísticas e campeonatos.</p></div>
 </div>
 
-<div class="card">
+<div class="card" onclick="openLightbox('images/cardappbarbearia.png')" style="cursor:pointer;">
 <img src="images/cardappbarbearia.png">
 <div class="card-content"><h3>Barbearia App</h3><p>Gestão de serviços, produtos e atendimento.</p></div>
 </div>
 
-<div class="card">
+<div class="card" onclick="openLightbox('images/cardappgrowplayer.png')" style="cursor:pointer;">
 <img src="images/cardappgrowplayer.png">
 <div class="card-content"><h3>Grow Player</h3><p>Player moderno com experiência premium.</p></div>
 </div>
@@ -188,6 +215,22 @@ ctx.fill();
 requestAnimationFrame(draw);
 }
 draw();
+</script>
+
+
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+<span class="close-lightbox">&times;</span>
+<img id="lightboxImage" src="">
+</div>
+
+<script>
+function openLightbox(image){
+document.getElementById('lightboxImage').src=image;
+document.getElementById('lightbox').classList.add('active');
+}
+function closeLightbox(){
+document.getElementById('lightbox').classList.remove('active');
+}
 </script>
 
 </body>
