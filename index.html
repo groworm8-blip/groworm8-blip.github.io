@@ -7,197 +7,188 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{
-font-family:Arial,Helvetica,sans-serif;
-background:#08111f;
+font-family:Arial,sans-serif;
+background:#020617;
 color:#fff;
 overflow-x:hidden;
 }
-.bg{
-position:fixed;inset:0;z-index:-2;
-background:radial-gradient(circle at 20% 20%,rgba(14,165,233,.25),transparent 30%),
-radial-gradient(circle at 80% 30%,rgba(249,115,22,.25),transparent 30%),
-radial-gradient(circle at 50% 80%,rgba(14,165,233,.15),transparent 35%),
-#08111f;
-animation:pulse 8s infinite alternate;
+#particles{
+position:fixed;
+inset:0;
+z-index:-1;
+background:
+radial-gradient(circle at 20% 20%,rgba(14,165,233,.25),transparent 35%),
+radial-gradient(circle at 80% 30%,rgba(249,115,22,.20),transparent 35%),
+#020617;
 }
-@keyframes pulse{
-from{transform:scale(1)}
-to{transform:scale(1.08)}
-}
+.container{max-width:1300px;margin:auto;padding:0 20px}
 .hero{
 min-height:100vh;
 display:flex;
 align-items:center;
-justify-content:center;
-padding:40px;
+justify-content:space-between;
 gap:60px;
-flex-wrap:wrap;
 }
-.hero-text{max-width:650px}
-.logo{width:90px;margin-bottom:20px}
-h1{font-size:64px;line-height:1}
-.orange{color:#f97316}
-.blue{color:#38bdf8}
-.subtitle{
-margin:20px 0;
-font-size:22px;
-color:#cbd5e1;
-}
-.hero-img{
-width:320px;
-border-radius:30px;
-box-shadow:0 0 60px rgba(14,165,233,.4);
-}
+.logo{width:180px;margin-bottom:20px}
+.hero h1{font-size:72px;line-height:1}
+.hero h1 span{color:#f97316}
+.hero p{font-size:24px;color:#cbd5e1;margin:25px 0;max-width:700px}
 .btn{
-display:inline-block;
-padding:14px 24px;
-margin-top:20px;
-background:linear-gradient(135deg,#0ea5e9,#f97316);
-border-radius:14px;
-text-decoration:none;
-color:white;
-font-weight:bold;
+display:inline-block;padding:16px 30px;
+background:linear-gradient(90deg,#0ea5e9,#f97316);
+border-radius:14px;color:white;text-decoration:none;font-weight:bold;
 }
-.section{
-max-width:1400px;
-margin:auto;
-padding:60px 20px;
+.photo{
+width:420px;border-radius:30px;
+box-shadow:0 0 50px rgba(14,165,233,.4);
 }
-.section h2{
-font-size:42px;
-margin-bottom:30px;
-text-align:center;
+.section-title{
+font-size:54px;text-align:center;margin:80px 0 40px;
 }
-.grid{
+.apps{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
 gap:25px;
 }
 .card{
-background:rgba(255,255,255,.05);
-backdrop-filter:blur(12px);
+background:rgba(15,23,42,.75);
+backdrop-filter:blur(10px);
 border:1px solid rgba(255,255,255,.08);
-border-radius:24px;
+border-radius:25px;
 overflow:hidden;
-transition:.35s;
+transition:.3s;
 }
 .card:hover{
 transform:translateY(-10px) scale(1.02);
-box-shadow:0 0 30px rgba(14,165,233,.25);
+box-shadow:0 0 40px rgba(14,165,233,.25);
 }
-.card img{
-width:100%;
-display:block;
-}
+.card img{width:100%;display:block}
 .card-content{padding:20px}
-.card h3{margin-bottom:10px}
+.card h3{font-size:28px;margin-bottom:10px}
 .card p{color:#cbd5e1;line-height:1.5}
 .about{
-background:rgba(255,255,255,.04);
-padding:30px;
-border-radius:24px;
-line-height:1.8;
-font-size:18px;
+margin:80px 0;
+padding:40px;
+border-radius:30px;
+background:rgba(255,255,255,.05);
 }
 footer{
 text-align:center;
-padding:40px;
+padding:50px 20px;
 color:#94a3b8;
 }
-@media(max-width:768px){
-h1{font-size:42px}
-.hero-img{width:260px}
+.stats{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
+margin:50px 0;
+}
+.stat{
+background:rgba(255,255,255,.05);
+padding:30px;
+border-radius:20px;
+text-align:center;
+}
+.stat h2{font-size:42px;color:#38bdf8}
+@media(max-width:900px){
+.hero{flex-direction:column;padding-top:40px;text-align:center}
+.hero h1{font-size:52px}
+.photo{width:90%;max-width:420px}
 }
 </style>
 </head>
 <body>
 
-<div class="bg"></div>
+<canvas id="particles"></canvas>
+
+<div class="container">
 
 <section class="hero">
-<div class="hero-text">
+<div>
 <img src="images/logo.png" class="logo">
-<h1>Darlan André <span class="orange">Ferreira</span></h1>
-<p class="subtitle">
-Desenvolvedor Mobile especializado em Flutter, Hive e Supabase.
-Criando aplicativos, sistemas e soluções digitais através da Groworm Solutions.
-</p>
-<a class="btn" href="#apps">Conheça meus projetos</a>
+<h1>Darlan André <br><span>Ferreira</span></h1>
+<p>Transformando ideias em aplicativos reais. Soluções mobile, sistemas comerciais, produtividade, esportes, inteligência artificial e entretenimento.</p>
+<a href="#apps" class="btn">Conheça meus projetos</a>
 </div>
 
-<img src="images/darlan.png" class="hero-img">
+<div>
+<img src="images/darlan.png" class="photo">
+</div>
 </section>
 
-<section class="section">
 <div class="about">
-<h2 class="blue">Sobre Mim</h2>
-<p>
-Sou desenvolvedor focado em aplicativos móveis, sistemas de gestão, produtividade,
-esportes, inteligência artificial e entretenimento. Todos os projetos apresentados
-foram idealizados e desenvolvidos por mim utilizando principalmente Flutter.
-</p>
+<h2 class="section-title">Sobre Mim</h2>
+<p>Desenvolvedor Flutter focado em criar produtos completos, desde a ideia até a publicação. Todos os aplicativos apresentados foram idealizados e desenvolvidos por mim através da Groworm Solutions.</p>
 </div>
-</section>
 
-<section id="apps" class="section">
-<h2><span class="blue">Aplicativos</span> Desenvolvidos</h2>
+<div class="stats">
+<div class="stat"><h2>6+</h2><p>Aplicativos</p></div>
+<div class="stat"><h2>100%</h2><p>Projetos Próprios</p></div>
+<div class="stat"><h2>Flutter</h2><p>Tecnologia Principal</p></div>
+</div>
 
-<div class="grid">
+<h2 class="section-title" id="apps">Aplicativos Desenvolvidos</h2>
+
+<div class="apps">
 
 <div class="card">
 <img src="images/cardassistenteia.png">
-<div class="card-content">
-<h3>Assistente Darlan IA</h3>
-<p>Assistente inteligente para organização de tarefas, produtividade e apoio diário.</p>
-</div>
+<div class="card-content"><h3>Assistente Darlan IA</h3><p>Organização de tarefas, produtividade e assistência inteligente.</p></div>
 </div>
 
 <div class="card">
 <img src="images/cardappmetas.png">
-<div class="card-content">
-<h3>Metas</h3>
-<p>Sistema comercial para acompanhamento de clientes, indicadores e metas.</p>
-</div>
+<div class="card-content"><h3>Metas</h3><p>Sistema comercial para metas, indicadores e clientes.</p></div>
 </div>
 
 <div class="card">
 <img src="images/cardapphojevai.png">
-<div class="card-content">
-<h3>HOJEVAI</h3>
-<p>Aplicativo voltado para hábitos, evolução pessoal e rotina saudável.</p>
-</div>
+<div class="card-content"><h3>HOJEVAI</h3><p>Hábitos, evolução pessoal e rotina saudável.</p></div>
 </div>
 
 <div class="card">
 <img src="images/cardappfutime.png">
-<div class="card-content">
-<h3>Futime</h3>
-<p>Gerenciamento de competições, partidas, estatísticas e campeonatos.</p>
-</div>
+<div class="card-content"><h3>Futime</h3><p>Competições, partidas, estatísticas e campeonatos.</p></div>
 </div>
 
 <div class="card">
 <img src="images/cardappbarbearia.png">
-<div class="card-content">
-<h3>Barbearia App</h3>
-<p>Gestão de serviços, produtos, comandas e atendimento.</p>
-</div>
+<div class="card-content"><h3>Barbearia App</h3><p>Gestão de serviços, produtos e atendimento.</p></div>
 </div>
 
 <div class="card">
 <img src="images/cardappgrowplayer.png">
-<div class="card-content">
-<h3>Grow Player</h3>
-<p>Player moderno com foco em experiência premium e streaming musical.</p>
-</div>
+<div class="card-content"><h3>Grow Player</h3><p>Player moderno com experiência premium.</p></div>
 </div>
 
 </div>
-</section>
 
 <footer>
 © 2026 Groworm Solutions • Irati - Paraná - Brasil
 </footer>
+
+</div>
+
+<script>
+const c=document.getElementById('particles');
+const ctx=c.getContext('2d');
+function resize(){c.width=innerWidth;c.height=innerHeight}
+resize();addEventListener('resize',resize);
+let p=[...Array(80)].map(()=>({x:Math.random()*innerWidth,y:Math.random()*innerHeight,r:Math.random()*3+1,v:Math.random()+0.2}));
+function draw(){
+ctx.clearRect(0,0,c.width,c.height);
+p.forEach(a=>{
+a.y+=a.v;
+if(a.y>innerHeight)a.y=0;
+ctx.beginPath();
+ctx.arc(a.x,a.y,a.r,0,6.28);
+ctx.fillStyle='rgba(14,165,233,.6)';
+ctx.fill();
+});
+requestAnimationFrame(draw);
+}
+draw();
+</script>
 
 </body>
 </html>
