@@ -125,28 +125,32 @@ color:white;
 
 .brand-row{
 display:flex;
-align-items:center;
-gap:20px;
+flex-direction:column;
+align-items:flex-start;
 margin-bottom:20px;
-flex-wrap:wrap;
 }
 .brand-name{
-font-size:42px;
-font-weight:800;
-background:linear-gradient(90deg,#0ea5e9,#f97316);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-}
-.contact-info{
-margin:20px 0;
-font-size:22px;
-font-weight:bold;
+margin-top:-10px;
+font-size:18px;
+font-weight:700;
+letter-spacing:3px;
 color:#38bdf8;
+text-transform:uppercase;
+}
+.whatsapp-btn{
+display:inline-block;
+margin-top:18px;
+padding:14px 24px;
+background:linear-gradient(90deg,#22c55e,#16a34a);
+border-radius:14px;
+color:white;
+text-decoration:none;
+font-weight:bold;
+box-shadow:0 0 20px rgba(34,197,94,.35);
 }
 @media(max-width:900px){
-.brand-row{justify-content:center;}
-.brand-name{font-size:30px;}
-.contact-info{font-size:18px;}
+.brand-row{align-items:center;}
+.brand-name{font-size:16px;}
 }
 
 </style>
@@ -165,12 +169,14 @@ color:#38bdf8;
 <div class="brand-name">Groworm Solutions</div>
 </div>
 
-<h1>Darlan André <br><span>Ferreira</span></h1>
+<h1>Darlan <br><span>Ferreira</span></h1>
 <p>Transformando ideias em aplicativos reais. Soluções mobile, sistemas comerciais, produtividade, esportes, inteligência artificial e entretenimento.</p>
 
-<div class="contact-info">
-📱 WhatsApp: (42) 98882-5736
-</div>
+<a href="https://wa.me/5542988825736" class="whatsapp-btn" target="_blank">
+📱 Falar no WhatsApp
+</a>
+
+<br><br>
 
 <a href="#apps" class="btn">Conheça meus projetos</a>
 </div>
